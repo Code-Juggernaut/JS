@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <form action="/register" method="post" id="login">
+            <fieldset>
+                <legend>personal data</legend>
+
+                <label for="username"> name</label>
+                <input type="text" name="username" id="username" placeholder="enter name">
+                <label for="email"> name</label>
+                <input type="text" name="email" id="email" placeholder="enter email">
+            </fieldset>
+            
+            
+            <button type="submit">send</button>
+        </form>
+
+        <form action="/register" method="post" id="buy">
+
+            <label for="name">name</label>
+            <input type = "text" name = "name" id = "name" placeholder="enter name">
+
+            <label for="email">email</label>
+            <input type="email" name = "email", id="email">
+
+            <label for = "query">query</label>
+            <input type="textarea"name = "query" id = "query">
+
+            <label for = "file">file</label>
+            <input type="file" name = "file" id = "file">
+
+            <label for="selection">consultation</label>
+            <select name = "selection" id="selection">
+                <option value = "B2B">Business to business</option>
+                <option value = "P2P">person to person</option>
+                <option value = "P2B">person to business</option>
+            </select>
+            
+
+            <input type="checkbox" id = "consult" name = "additives[ ]" value = "consult">
+            <input type="checkbox" id = "buy" name = "additives[ ]" value = "buy">
+            <input type="checkbox" id = "sell" name = "additives[ ]" value = "sell">
+
+            <input type="checkbox" id = "submit" name = "submit" value = "submit" checked>
+            
+            <button type="submit">submit</button>
+            <button type="delete">remove</button>
+
+        </form>
+
+        <script src="./main.js" defer></script>
+    </body>
+</html>
