@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <header class="header">
+            <h1>Каталог товарів</h1>
+            <button id="themeToggle" class="btn btn-secondary">Dark mode</button>
+        </header>
+
+        <main class="main-container">
+            <section class="catalog-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Пошук товарів...">
+                </div>
+                <div id="productsContainer" class="products-grid"></div>
+            </section>
+
+            <section class="cart-section">
+                <h2>Кошик</h2>
+                <div class="cart-summary">
+                    <p>Кількість товарів: <span id="cartCount">0</span></p>
+                    <p>Загальна сума: <span id="cartTotal">0</span> $</p>
+                </div>
+                <ul id="cartList" class="cart-list"></ul>
+                <button id="emptyCartBtn" class="btn btn-danger" style="display: none;">Empty cart</button>
+            </section>
+        </main>
+        <script src="./main.js" defer></script>
+    </body>
+</html>

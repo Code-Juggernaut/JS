@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+    
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>My tasks</h1>
+        
+            <form id="goalForm">
+                <div class="input-group">
+                    <input type="text" id="goalInput" placeholder="Enter new task...">
+                    <button type="submit" class="btn">add</button>
+                </div>
+                <div id="errorMsg" class="error-msg"></div>
+            </form>
+
+            <div class="filters">
+                <button type="button" class="filter-btn active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="active">Active</button>
+                <button type="button" class="filter-btn" data-filter="completed">Done</button>
+            </div>
+
+            <div id="counter" class="counter">total: 0. done: 0</div>
+
+            <ul id="goalList" class="goal-list"></ul>
+        
+        
+            <div id="emptyMessage" class="empty-msg" hidden>No data...</div>
+        </div>
+
+        <script src="main.js"></script>
+    </body>
+</html>
