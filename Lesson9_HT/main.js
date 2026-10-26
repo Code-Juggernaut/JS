@@ -1,4 +1,4 @@
-const API_KEY = 'YOUR_API_KEY'; // Замініть на ваш ключ OMDB API
+const API_KEY = 'MySUPERAPI_key1234'; 
 const searchBtn = document.getElementById('searchBtn');
 const searchTitleInput = document.getElementById('searchTitle');
 const searchTypeSelect = document.getElementById('searchType');
@@ -11,14 +11,13 @@ let currentQuery = '';
 let currentType = '';
 let currentPage = 1;
 
-// Подія кліку на кнопку "Search"
 searchBtn.addEventListener('click', () => {
     currentQuery = searchTitleInput.value.trim();
     currentType = searchTypeSelect.value;
     currentPage = 1;
 
     if (!currentQuery) {
-        messageDiv.innerHTML = '<p class="error">Будь ласка, введіть назву фільму!</p>';
+        messageDiv.innerHTML = '<p class="error">Please, enter film`s name</p>';
         moviesListDiv.innerHTML = '';
         paginationDiv.innerHTML = '';
         movieDetailsDiv.style.display = 'none';
@@ -28,9 +27,8 @@ searchBtn.addEventListener('click', () => {
     fetchMovies(currentQuery, currentType, currentPage);
 });
 
-// Функція для запиту списку фільмів через AJAX (Fetch API)
 function fetchMovies(title, type, page) {
-    messageDiv.innerHTML = 'Завантаження...';
+    messageDiv.innerHTML = 'loading...';
     moviesListDiv.innerHTML = '';
     paginationDiv.innerHTML = '';
     movieDetailsDiv.style.display = 'none';
@@ -52,14 +50,13 @@ function fetchMovies(title, type, page) {
             }
         })
         .catch(error => {
-            console.error('Помилка:', error);
-            messageDiv.innerHTML = `<p class="error">Сталася помилка при запиті до сервера.</p>`;
+            console.error('Error:', error);
+            messageDiv.innerHTML = `<p class="error"> server doesn't responce.</p>`;
         });
 }
 
-// Відображення списку фільмів
 function displayMovies(movies) {
-    moviesListDiv.innerHTML = '<h2>Результати пошуку:</h2>';
+    moviesListDiv.innerHTML = '<h2>Results:</h2>';
     movies.forEach(movie => {
         const movieItem = document.createElement('div');
         movieItem.classList.add('movie-item');
@@ -71,7 +68,6 @@ function displayMovies(movies) {
     });
 }
 
-// Налаштування пагінації (OMDB повертає по 10 результатів на сторінку)
 function setupPagination(totalResults, currentPage) {
     paginationDiv.innerHTML = '';
     const totalPages = Math.ceil(totalResults / 10);
@@ -90,7 +86,6 @@ function setupPagination(totalResults, currentPage) {
     }
 }
 
-// Запит детальної інформації про фільм за його imdbID
 function fetchMovieDetails(imdbID) {
     const url = `https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}`;
 
@@ -108,12 +103,12 @@ function fetchMovieDetails(imdbID) {
                     <p><strong>Рейтинг IMDb:</strong> ${data.imdbRating}</p>
                     ${data.Poster !== 'N/A' ? `<img src="${data.Poster}" alt="Poster" width="150">` : ''}
                 `;
-                // Плавна прокрутка до блоку з деталями
+                
                 movieDetailsDiv.scrollIntoView({ behavior: 'smooth' });
             }
         })
         .catch(error => {
-            console.error('Помилка:', error);
+            console.error('Error:', error);
         });
 }
 
