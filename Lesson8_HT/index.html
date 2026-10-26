@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form id="form">
+            <h1>Color picker</h1>
+            <label for="color_name">Color:</label>
+            <input type="text" id="color_name" name="color_name">
+
+            <label for="color_palete">Type:</label>
+            <select name="color_palete" id="color_palete">
+                <option value="RGB"> RGB</option>
+                <option value="RGBA"> RGBA</option>
+                <option value="HSV"> HSV</option>
+            </select>
+
+            <label for="color">color code:</label>
+            <input type="text" id="color" name="color">
+            <button type="submit">Submit</button>
+        </form>
+        <div id="color_container">
+
+        </div>
+        <script src="./main.js" defer></script>
+    </body>
+</html>

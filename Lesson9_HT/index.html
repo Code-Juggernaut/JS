@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук фільмів OMDB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .search-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .search-form input, .search-form select, .search-form button {
+            padding: 8px;
+            font-size: 16px;
+        }
+        .movie-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .pagination button.active {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+        }
+        .movie-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Пошук фільмів</h1>
+
+    <div class="search-form">
+        <input type="text" id="searchTitle" placeholder="Введіть назву фільму..." required>
+        <select id="searchType">
+            <option value="">Всі типи</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+        </select>
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="message"></div>
+    <div id="moviesList"></div>
+    <div id="pagination" class="pagination"></div>
+    
+    <div id="movieDetails" class="movie-details" style="display: none;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
